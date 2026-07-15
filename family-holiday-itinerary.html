@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Holiday Itinerary</title>
+  <style>
+    :root {
+      --blue-900: #0f3d66;
+      --blue-700: #1769aa;
+      --blue-500: #2f9be6;
+      --blue-100: #eaf6ff;
+      --green-700: #15803d;
+      --green-100: #dcfce7;
+      --white: #ffffff;
+      --text: #1f2a37;
+      --muted: #64748b;
+      --border: #dbeafe;
+      --shadow: 0 14px 35px rgba(15, 61, 102, 0.12);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(47, 155, 230, 0.18), transparent 34rem),
+        linear-gradient(180deg, #f5fbff 0%, #ffffff 52%, #eef8ff 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(219, 234, 254, 0.9);
+    }
+
+    .nav {
+      width: min(100% - 2rem, var(--max-width));
+      margin: 0 auto;
+      padding: 0.9rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 800;
+      color: var(--blue-900);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
+      box-shadow: 0 10px 20px rgba(47, 155, 230, 0.24);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      color: var(--blue-900);
+      font-weight: 650;
+      font-size: 0.92rem;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      background: var(--blue-100);
+      outline: none;
+    }
+
+    main {
+      width: min(100% - 2rem, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 3rem 0;
+    }
+
+    .hero {
+      min-height: 72vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .hero-card {
+      width: 100%;
+      padding: clamp(2rem, 7vw, 5rem);
+      border-radius: clamp(24px, 5vw, 40px);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(234, 246, 255, 0.92)),
+        linear-gradient(135deg, var(--blue-700), var(--blue-500));
+      border: 1px solid rgba(219, 234, 254, 0.95);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(47, 155, 230, 0.12);
+      pointer-events: none;
+    }
+
+    .hero-card::before {
+      width: 14rem;
+      height: 14rem;
+      top: -5rem;
+      right: -4rem;
+    }
+
+    .hero-card::after {
+      width: 9rem;
+      height: 9rem;
+      bottom: -3rem;
+      left: -2rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--blue-700);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      color: var(--blue-900);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 8vw, 5.75rem);
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 5vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 4vw, 1.8rem);
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 42rem;
+      margin: 0 0 1.5rem;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: clamp(1.1rem, 3vw, 1.6rem);
+    }
+
+    .countdown-card {
+      text-align: center;
+    }
+
+    .countdown-value {
+      display: block;
+      color: var(--blue-700);
+      font-size: clamp(2.3rem, 10vw, 4rem);
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .countdown-label {
+      display: block;
+      margin-top: 0.6rem;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.76rem;
+    }
+
+    .summary-card {
+      min-height: 9rem;
+    }
+
+    .summary-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: var(--blue-100);
+      margin-bottom: 1rem;
+    }
+
+    .summary-line {
+      height: 0.75rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue-100), rgba(234, 246, 255, 0.2));
+      margin-top: 0.9rem;
+    }
+
+    .summary-line.short {
+      width: 58%;
+    }
+
+    .day-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+
+    .day-button {
+      border: 0;
+      border-radius: 999px;
+      background: var(--blue-700);
+      color: var(--white);
+      padding: 0.85rem 1.15rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(23, 105, 170, 0.2);
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .day-button:hover,
+    .day-button:focus-visible {
+      background: var(--blue-900);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .day-button:disabled {
+      background: #b8d7ef;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .day-indicator {
+      color: var(--blue-900);
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .day-card {
+      display: none;
+      min-height: 22rem;
+    }
+
+    .day-card.active {
+      display: block;
+    }
+
+    .day-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .day-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+      padding: clamp(1.1rem, 3vw, 1.6rem);
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(234, 246, 255, 0.8), rgba(255, 255, 255, 0.95));
+    }
+
+    .day-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.7rem;
+    }
+
+    .day-date {
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .day-type {
+      border-radius: 999px;
+      padding: 0.45rem 0.75rem;
+      font-weight: 850;
+      font-size: 0.82rem;
+    }
+
+    .day-card.travel-day .day-type {
+      background: var(--blue-100);
+      color: var(--blue-700);
+    }
+
+    .day-card.relax-day .day-type {
+      background: var(--green-100);
+      color: var(--green-700);
+    }
+
+    .day-badge {
+      flex: 0 0 auto;
+      border-radius: 18px;
+      padding: 0.65rem 0.9rem;
+      background: var(--blue-900);
+      color: var(--white);
+      font-weight: 850;
+    }
+
+    .day-card.relax-day .day-badge {
+      background: var(--green-700);
+    }
+
+    .day-body {
+      padding: clamp(1.1rem, 3vw, 1.6rem);
+    }
+
+    .day-details {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: minmax(8rem, 0.38fr) 1fr;
+      gap: 1rem;
+      align-items: start;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: #fbfdff;
+    }
+
+    .detail-row:has(.detail-value:empty) {
+      display: none;
+    }
+
+    .detail-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .detail-value {
+      color: var(--blue-900);
+      font-weight: 750;
+      line-height: 1.5;
+    }
+
+    .suggestions {
+      margin-top: 1.3rem;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(234, 246, 255, 0.75), rgba(255, 255, 255, 0.95));
+      border: 1px solid var(--border);
+    }
+
+    .suggestions h4 {
+      margin: 0 0 0.8rem;
+      color: var(--blue-900);
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .suggestion-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--text);
+    }
+
+    .suggestion-list:empty {
+      display: none;
+    }
+
+    .suggestion-list li {
+      margin: 0.5rem 0;
+      line-height: 1.6;
+    }
+
+    .suggestion-list li::marker {
+      color: var(--blue-700);
+    }
+
+    .suggestion-list ul {
+      margin: 0.45rem 0 0.2rem;
+      padding-left: 1.15rem;
+    }
+
+    .suggestions:has(.suggestion-list:empty) {
+      display: none;
+    }
+
+    .site-footer {
+      width: min(100% - 2rem, var(--max-width));
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .grid-4,
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .day-controls {
+        position: sticky;
+        top: 73px;
+        z-index: 8;
+        background: rgba(245, 251, 255, 0.88);
+        backdrop-filter: blur(12px);
+        padding: 0.75rem 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      main {
+        width: min(100% - 1rem, var(--max-width));
+      }
+
+      .section {
+        padding: 2rem 0;
+      }
+
+      .hero {
+        min-height: 62vh;
+      }
+
+      .grid-4,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .day-controls {
+        gap: 0.5rem;
+      }
+
+      .day-button {
+        padding: 0.8rem 0.95rem;
+      }
+
+      .day-header {
+        grid-template-columns: 1fr;
+      }
+
+      .day-badge {
+        width: fit-content;
+      }
+
+      .detail-row {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#welcome" aria-label="Family holiday itinerary home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Holiday Itinerary</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="#welcome">Welcome</a>
+        <a class="nav-link" href="#countdown">Countdown</a>
+        <a class="nav-link" href="#summary">Summary</a>
+        <a class="nav-link" href="#itinerary">Itinerary</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="welcome" class="section hero" aria-labelledby="holiday-title">
+      <div class="hero-card">
+        <p class="eyebrow">Family Holiday</p>
+        <h1 id="holiday-title">Holiday Title</h1>
+      </div>
+    </section>
+
+    <section id="countdown" class="section" aria-labelledby="countdown-title">
+      <h2 id="countdown-title">Countdown to Departure</h2>
+      <div class="grid grid-4" role="timer" aria-live="polite">
+        <div class="card countdown-card">
+          <span class="countdown-value" id="days">0</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="card countdown-card">
+          <span class="countdown-value" id="hours">0</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="card countdown-card">
+          <span class="countdown-value" id="minutes">0</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="card countdown-card">
+          <span class="countdown-value" id="seconds">0</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="section" aria-labelledby="summary-title">
+      <h2 id="summary-title">Trip Summary</h2>
+      <div class="grid grid-3">
+        <article class="card summary-card">
+          <div class="summary-icon" aria-hidden="true"></div>
+          <h3>Overview</h3>
+          <div class="summary-line"></div>
+          <div class="summary-line short"></div>
+        </article>
+        <article class="card summary-card">
+          <div class="summary-icon" aria-hidden="true"></div>
+          <h3>Travel</h3>
+          <div class="summary-line"></div>
+          <div class="summary-line short"></div>
+        </article>
+        <article class="card summary-card">
+          <div class="summary-icon" aria-hidden="true"></div>
+          <h3>Stay</h3>
+          <div class="summary-line"></div>
+          <div class="summary-line short"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="itinerary" class="section" aria-labelledby="itinerary-title">
+      <h2 id="itinerary-title">Daily Itinerary</h2>
+
+      <div class="day-controls" aria-label="Day navigation">
+        <button class="day-button" id="previousDay" type="button">Previous Day</button>
+        <div class="day-indicator" id="dayIndicator" aria-live="polite"></div>
+        <button class="day-button" id="nextDay" type="button">Next Day</button>
+      </div>
+
+      <div class="day-pages">
+        <article class="card day-card travel-day active" data-day="1">
+          <div class="day-header">
+            <div>
+              <h3>Day 1: : Home to Dartford</h3>
+              <div class="day-meta">
+                <span class="day-date">17/07/2026</span>
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 1</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">NE26 1DZ (display as HOME)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Holiday Inn Express London – Dartford (DA1 5PA)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">15:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">From 15:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Holiday Inn Express London – Dartford (DA1 5PA)</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Eat at the Tawny Owl (NG24 3NG)</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card travel-day" data-day="2">
+          <div class="day-header">
+            <div>
+              <h3>Day 2: : Dartford to Bruges</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 2</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Holiday Inn Express London – Dartford (DA1 5PA)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Bruges</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Before 08:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">15:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Ibis Budget Bruges Centrum Station (8000)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Triple Room</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Bruges
+                  <ul>
+                    <li>Canal Boat Tour</li>
+                    <li>Church of Our Lady – Michaelangelo Madonna &amp; Child</li>
+                    <li>EAT: Tom's Diner (p. 100)</li>
+                    <li>EAT: Chocolaterie Spegelagre (p. 99)</li>
+                    <li>DRINKS: T'Poatersgat</li>
+                    <li>DRINKS: Café Vlinssinghe</li>
+                  </ul></li>
+                <li>Dunkirk</li>
+                <li>Ypres</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card travel-day" data-day="3">
+          <div class="day-header">
+            <div>
+              <h3>Day 3: : Bruges to Brussels</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 3</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Bruges</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Brussels</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">12:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">15:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Citadines Sainte-Catherine Brussels (1000 Brussels)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Apartment</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Bruges
+                  <ul>
+                    <li>Canal Boat Tour</li>
+                    <li>Church of Our Lady – Michaelangelo Madonna &amp; Child</li>
+                    <li>EAT: Tom's Diner (p. 100)</li>
+                    <li>EAT: Chocolaterie Spegelagre (p. 99)</li>
+                    <li>DRINKS: T'Poatersgat</li>
+                    <li>DRINKS: Café Vlinssinghe</li>
+                  </ul></li>
+                <li>Ghent</li>
+                <li>Brussels:
+                  <ul>
+                    <li>Grand Place</li>
+                    <li>EU Quarter</li>
+                    <li>(EAT) Menma (p. 50 - Ramen)</li>
+                    <li>(EAT) Les Planches (p. 56 - General)</li>
+                    <li>(EAT) Maison Antoines (p.56 - Frittes)</li>
+                  </ul></li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card travel-day" data-day="4">
+          <div class="day-header">
+            <div>
+              <h3>Day 4: : Brussels to Germany</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 4</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Brussels</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Krov (54536)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">11:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">16:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Landal Mont Royal, Krov (54536)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Brussels:
+                  <ul>
+                    <li>Grand Place</li>
+                    <li>EU Quarter</li>
+                    <li>(EAT) Menma (p. 50 - Ramen)</li>
+                    <li>(EAT) Les Planches (p. 56 - General)</li>
+                    <li>(EAT) Maison Antoines (p.56 - Frittes)</li>
+                  </ul></li>
+                <li>Waterloo</li>
+                <li>Trier
+                  <ul>
+                    <li>Porta Nigra</li>
+                    <li>Amphitheatre</li>
+                    <li>Trier Dom</li>
+                    <li>Karl Marx Haus</li>
+                  </ul></li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="5">
+          <div class="day-header">
+            <div>
+              <h3>Day 5: : Moselle</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 5</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Landal Mont Royal, Krov (54536)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Trier</li>
+                <li>Bernkastel-Kues</li>
+                <li>Cochem (Boat Ride?)</li>
+                <li>Koblenz</li>
+                <li>Boppard</li>
+                <li>Eltz</li>
+                <li>Morsdorf</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="6">
+          <div class="day-header">
+            <div>
+              <h3>Day 6: : Moselle</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 6</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Landal Mont Royal, Krov (54536)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Trier</li>
+                <li>Bernkastel-Kues</li>
+                <li>Cochem (Boat Ride?)</li>
+                <li>Koblenz</li>
+                <li>Boppard</li>
+                <li>Eltz</li>
+                <li>Morsdorf</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="7">
+          <div class="day-header">
+            <div>
+              <h3>Day 7: : Moselle</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 7</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Landal Mont Royal, Krov (54536)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Trier</li>
+                <li>Bernkastel-Kues</li>
+                <li>Cochem (Boat Ride?)</li>
+                <li>Koblenz</li>
+                <li>Boppard</li>
+                <li>Eltz</li>
+                <li>Morsdorf</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card travel-day" data-day="8">
+          <div class="day-header">
+            <div>
+              <h3>Day 8: : Romantic Road</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 8</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Krov (54536)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Nordlingen</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">10:30</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">15:00-20:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">2nd Home Hotel, Nordlingen (86720)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">2x Double Rooms</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Tauberbischofsheim</li>
+                <li>Rothenburg Ob Der Trauber</li>
+                <li>Dinkelsbuhl</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card travel-day" data-day="9">
+          <div class="day-header">
+            <div>
+              <h3>Day 9: : Nordlingen to Munich</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 9</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Nordlingen</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Munich</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">11:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">15:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Aparthotel Adagio Access Muenchen City OlympiaPark</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Apartment</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Fussen</li>
+                <li>Schloss Neuschwanstein</li>
+                <li>Munich
+                  <ul>
+                    <li>Tiergarten</li>
+                    <li>DRINK: Chinesischer Turm</li>
+                    <li>DRINK: Hofbrauhaus</li>
+                  </ul></li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="10">
+          <div class="day-header">
+            <div>
+              <h3>Day 10: : Munich</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 10</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Aparthotel Adagio Access Muenchen City OlympiaPark</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Marienplatz</li>
+                <li>Tiergarten</li>
+                <li>DRINK: Chinesischer Turm</li>
+                <li>Bayern Munich Museum</li>
+                <li>Nazi Walking Tours</li>
+                <li>DRINK: Hofbrauhaus</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card travel-day" data-day="11">
+          <div class="day-header">
+            <div>
+              <h3>Day 11: : Bavaria</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 11</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Munich</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Zwiesel</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">11:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">16:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Landal Arber, Zwiesel (94227)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Dachau</li>
+                <li>Passau</li>
+                <li>Regensburg</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="12">
+          <div class="day-header">
+            <div>
+              <h3>Day 12: : Bavaria</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 12</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Landal Arber, Zwiesel (94227)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Passau
+                  <ul>
+                    <li>Café Greindl (p470)</li>
+                    <li>Café Stephan's Dom (p470)</li>
+                  </ul></li>
+                <li>Zwiesel
+                  <ul>
+                    <li>Dampfbrau</li>
+                    <li>Glaserne Scheune</li>
+                  </ul></li>
+                <li>Mount Grosser Arber</li>
+                <li>Mount Luse</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="13">
+          <div class="day-header">
+            <div>
+              <h3>Day 13: : Bavaria</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 13</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Landal Arber, Zwiesel (94227)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Passau
+                  <ul>
+                    <li>Café Greindl (p470)</li>
+                    <li>Café Stephan's Dom (p470)</li>
+                  </ul></li>
+                <li>Zwiesel
+                  <ul>
+                    <li>Dampfbrau</li>
+                    <li>Glaserne Scheune</li>
+                  </ul></li>
+                <li>Mount Grosser Arber</li>
+                <li>Mount Luse</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="14">
+          <div class="day-header">
+            <div>
+              <h3>Day 14: : Bavaria</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 14</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Landal Arber, Zwiesel (94227)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Passau
+                  <ul>
+                    <li>Café Greindl (p470)</li>
+                    <li>Café Stephan's Dom (p470)</li>
+                  </ul></li>
+                <li>Zwiesel
+                  <ul>
+                    <li>Dampfbrau</li>
+                    <li>Glaserne Scheune</li>
+                  </ul></li>
+                <li>Mount Grosser Arber</li>
+                <li>Mount Luse</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card travel-day" data-day="15">
+          <div class="day-header">
+            <div>
+              <h3>Day 15: : Bavaria to Berlin</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 15</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Zwiesel</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Berlin</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">10:30</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">15:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Novotel Suites Berlin City Potsdamer Platz (10963)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Suite (Double Bed &amp; Sofa Bed)</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Wittenberg</li>
+                <li>Spreewald</li>
+                <li>Dresden</li>
+                <li>Liepzig</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="16">
+          <div class="day-header">
+            <div>
+              <h3>Day 16: : Berlin</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 16</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Novotel Suites Berlin City Potsdamer Platz (10963)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Suite (Double Bed &amp; Sofa Bed)</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Brandenburg Gate</li>
+                <li>Checkpoint Charlie</li>
+                <li>Potsdamer Platz
+                  <ul>
+                    <li>(EAT) The Sanctuary</li>
+                  </ul></li>
+                <li>Tiergarten
+                  <ul>
+                    <li>(EAT) Café Am Neaun See</li>
+                    <li>(SHOP) Berliner Trodelmarkt</li>
+                  </ul></li>
+                <li>East Berlin
+                  <ul>
+                    <li>Stasi Museum</li>
+                    <li>Karl Marx Allee</li>
+                  </ul></li>
+                <li>(SHOP) Ka De We</li>
+                <li>(EAT) Chay Long (Vegan Vietnamese - p. 90)</li>
+                <li>(EAT) Umami (Veg Options IndoChinese – p.90)</li>
+                <li>(DRINKS) Prater</li>
+                <li>Berliner Unterwelten (p.92)</li>
+                <li>Spy Museum (p. 98)</li>
+                <li>Topographie des Terrors (p.98)</li>
+                <li>(EAT) Saravanaa Bhavan (Meat Free Indian p. 98)</li>
+                <li>(EAT) Fraulein Kimchee (Korean Pink Tofu p.101)</li>
+                <li>(EAT) El Amigo Taquiera (Taco p.101)</li>
+                <li>(EAT) Narnj (Syrian Falafel p.101)</li>
+                <li>LuquidRom (p101)</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="17">
+          <div class="day-header">
+            <div>
+              <h3>Day 17: : Berlin</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 17</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Novotel Suites Berlin City Potsdamer Platz (10963)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Suite (Double Bed &amp; Sofa Bed)</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Brandenburg Gate</li>
+                <li>Checkpoint Charlie</li>
+                <li>Potsdamer Platz
+                  <ul>
+                    <li>(EAT) The Sanctuary</li>
+                  </ul></li>
+                <li>Tiergarten
+                  <ul>
+                    <li>(EAT) Café Am Neaun See</li>
+                    <li>(SHOP) Berliner Trodelmarkt</li>
+                  </ul></li>
+                <li>East Berlin
+                  <ul>
+                    <li>Stasi Museum</li>
+                    <li>Karl Marx Allee</li>
+                  </ul></li>
+                <li>(SHOP) Ka De We</li>
+                <li>(EAT) Chay Long (Vegan Vietnamese - p. 90)</li>
+                <li>(EAT) Umami (Veg Options IndoChinese – p.90)</li>
+                <li>(DRINKS) Prater</li>
+                <li>Berliner Unterwelten (p.92)</li>
+                <li>Spy Museum (p. 98)</li>
+                <li>Topographie des Terrors (p.98)</li>
+                <li>(EAT) Saravanaa Bhavan (Meat Free Indian p. 98)</li>
+                <li>(EAT) Fraulein Kimchee (Korean Pink Tofu p.101)</li>
+                <li>(EAT) El Amigo Taquiera (Taco p.101)</li>
+                <li>(EAT) Narnj (Syrian Falafel p.101)</li>
+                <li>LuquidRom (p101)</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card travel-day" data-day="18">
+          <div class="day-header">
+            <div>
+              <h3>Day 18: : Berlin to Netherlands</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 18</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Berlin</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Hexelseweg</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">12:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">16:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Braunschweig</li>
+                <li>Osnabruck</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="19">
+          <div class="day-header">
+            <div>
+              <h3>Day 19: : Hexelseweg</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 19</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Zwolle</li>
+                <li>Deventer</li>
+                <li>Twente</li>
+                <li>Giethorn</li>
+                <li>Hugging Cows</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="20">
+          <div class="day-header">
+            <div>
+              <h3>Day 20: : Hexelseweg</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 20</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Zwolle</li>
+                <li>Deventer</li>
+                <li>Twente</li>
+                <li>Giethorn</li>
+                <li>Hugging Cows</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="21">
+          <div class="day-header">
+            <div>
+              <h3>Day 21: : Hexelseweg</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 21</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Zwolle</li>
+                <li>Deventer</li>
+                <li>Twente</li>
+                <li>Giethorn</li>
+                <li>Hugging Cows</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card travel-day" data-day="22">
+          <div class="day-header">
+            <div>
+              <h3>Day 22: Hexelseweg to Amsterdam</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 22</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Hexelseweg</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Amsterdam</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">10:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">16:00-17:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">EuroParcs Het Amsterdamse Bos (1187 NZ Amstelveen)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+            <section class="suggestions" aria-label="Dad's Suggestions">
+              <h4>Dad's Suggestions</h4>
+              <ul class="suggestion-list">
+                <li>Utrecht
+                  <ul>
+                    <li>(EAT) Olivier (p.144)</li>
+                    <li>Dom Under</li>
+                    <li>(EAT) Koetshuis de Haar (p.147)</li>
+                  </ul></li>
+                <li>Arnhem
+                  <ul>
+                    <li>Bridge too far</li>
+                  </ul></li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="23">
+          <div class="day-header">
+            <div>
+              <h3>Day 23: : Amsterdam</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 23</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">EuroParcs Het Amsterdamse Bos (1187 NZ Amstelveen)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card day-card relax-day" data-day="24">
+          <div class="day-header">
+            <div>
+              <h3>Day 24: : Amsterdam</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Relax Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 24</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">Don't worry, relax!</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">EuroParcs Het Amsterdamse Bos (1187 NZ Amstelveen)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">Lodge</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card day-card travel-day" data-day="25">
+          <div class="day-header">
+            <div>
+              <h3>Day 25: : Amsterdam to Home</h3>
+              <div class="day-meta">
+                
+                <span class="day-type">Travel Day</span>
+              </div>
+            </div>
+            <span class="day-badge">Day 25</span>
+          </div>
+          <div class="day-body">
+            <div class="day-details">
+              <div class="detail-row">
+                <span class="detail-label">Depart From</span>
+                <span class="detail-value">Amsterdam</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Destination</span>
+                <span class="detail-value">Whitley Bay, NE26 1DZ (display as HOME)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check Out Time</span>
+                <span class="detail-value">09:00-10:00</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Check In Time</span>
+                <span class="detail-value">16:45</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Overnight Location</span>
+                <span class="detail-value">DFDS Amsterdam to Newcastle Ferry</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Room Description</span>
+                <span class="detail-value">4 Bed Cabin (Pet Friendly)</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Created by Dad
+  </footer>
+
+  <script>
+    const departureDate = new Date("2026-07-17T15:00:00");
+
+    const countdownElements = {
+      days: document.getElementById("days"),
+      hours: document.getElementById("hours"),
+      minutes: document.getElementById("minutes"),
+      seconds: document.getElementById("seconds")
+    };
+
+    function updateCountdown() {
+      const now = new Date();
+      const difference = Math.max(departureDate - now, 0);
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((difference / (1000 * 60)) % 60);
+      const seconds = Math.floor((difference / 1000) % 60);
+
+      countdownElements.days.textContent = days;
+      countdownElements.hours.textContent = hours;
+      countdownElements.minutes.textContent = minutes;
+      countdownElements.seconds.textContent = seconds;
+    }
+
+    const dayCards = Array.from(document.querySelectorAll(".day-card"));
+    const previousDayButton = document.getElementById("previousDay");
+    const nextDayButton = document.getElementById("nextDay");
+    const dayIndicator = document.getElementById("dayIndicator");
+    let currentDayIndex = 0;
+
+    function showDay(index) {
+      currentDayIndex = Math.min(Math.max(index, 0), dayCards.length - 1);
+
+      dayCards.forEach((card, cardIndex) => {
+        card.classList.toggle("active", cardIndex === currentDayIndex);
+      });
+
+      dayIndicator.textContent = `Day ${currentDayIndex + 1} of ${dayCards.length}`;
+      previousDayButton.disabled = currentDayIndex === 0;
+      nextDayButton.disabled = currentDayIndex === dayCards.length - 1;
+    }
+
+    previousDayButton.addEventListener("click", () => showDay(currentDayIndex - 1));
+    nextDayButton.addEventListener("click", () => showDay(currentDayIndex + 1));
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    showDay(0);
+  </script>
+</body>
+</html>
