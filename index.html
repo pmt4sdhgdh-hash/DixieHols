@@ -526,6 +526,31 @@
         gap: 0.35rem;
       }
     }
+
+    .maps-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      width: fit-content;
+      margin-top: 0.65rem;
+      border-radius: 999px;
+      padding: 0.65rem 0.9rem;
+      background: var(--blue-700);
+      color: var(--white);
+      font-weight: 850;
+      font-size: 0.88rem;
+      box-shadow: 0 10px 22px rgba(23, 105, 170, 0.18);
+      transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .maps-button:hover,
+    .maps-button:focus-visible {
+      background: var(--blue-900);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(15, 61, 102, 0.22);
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -639,7 +664,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Holiday Inn Express London – Dartford (DA1 5PA)</span>
+                <span class="detail-value">Holiday Inn Express London – Dartford (DA1 5PA)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Holiday%20Inn%20Express%20London%20%E2%80%93%20Dartford%20(DA1%205PA)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
@@ -682,7 +708,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Ibis Budget Bruges Centrum Station (8000)</span>
+                <span class="detail-value">Ibis Budget Bruges Centrum Station (8000)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Ibis%20Budget%20Bruges%20Centrum%20Station%20(8000)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -696,9 +723,9 @@
                   <ul>
                     <li>Canal Boat Tour</li>
                     <li>Church of Our Lady – Michaelangelo Madonna &amp; Child</li>
-                    <li>EAT: Tom's Diner (p. 100)</li>
+                    <li>EAT: Tom’s Diner (p. 100)</li>
                     <li>EAT: Chocolaterie Spegelagre (p. 99)</li>
-                    <li>DRINKS: T'Poatersgat</li>
+                    <li>DRINKS: T’Poatersgat</li>
                     <li>DRINKS: Café Vlinssinghe</li>
                   </ul></li>
                 <li>Dunkirk</li>
@@ -739,7 +766,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Citadines Sainte-Catherine Brussels (1000 Brussels)</span>
+                <span class="detail-value">Citadines Sainte-Catherine Brussels (1000 Brussels)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Citadines%20Sainte-Catherine%20Brussels%20(1000%20Brussels)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -753,9 +781,9 @@
                   <ul>
                     <li>Canal Boat Tour</li>
                     <li>Church of Our Lady – Michaelangelo Madonna &amp; Child</li>
-                    <li>EAT: Tom's Diner (p. 100)</li>
+                    <li>EAT: Tom’s Diner (p. 100)</li>
                     <li>EAT: Chocolaterie Spegelagre (p. 99)</li>
-                    <li>DRINKS: T'Poatersgat</li>
+                    <li>DRINKS: T’Poatersgat</li>
                     <li>DRINKS: Café Vlinssinghe</li>
                   </ul></li>
                 <li>Ghent</li>
@@ -803,7 +831,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Landal Mont Royal, Krov (54536)</span>
+                <span class="detail-value">Landal Mont Royal, Krov (54536)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Landal%20Mont%20Royal%2C%20Krov%20(54536)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -849,23 +878,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Landal Mont Royal, Krov (54536)</span>
+                <span class="detail-value">Landal Mont Royal, Krov (54536)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Landal%20Mont%20Royal%2C%20Krov%20(54536)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -902,23 +932,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Landal Mont Royal, Krov (54536)</span>
+                <span class="detail-value">Landal Mont Royal, Krov (54536)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Landal%20Mont%20Royal%2C%20Krov%20(54536)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -955,23 +986,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Landal Mont Royal, Krov (54536)</span>
+                <span class="detail-value">Landal Mont Royal, Krov (54536)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Landal%20Mont%20Royal%2C%20Krov%20(54536)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1024,7 +1056,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">2nd Home Hotel, Nordlingen (86720)</span>
+                <span class="detail-value">2nd Home Hotel, Nordlingen (86720)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=2nd%20Home%20Hotel%2C%20Nordlingen%20(86720)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1073,7 +1106,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Aparthotel Adagio Access Muenchen City OlympiaPark</span>
+                <span class="detail-value">Aparthotel Adagio Access Muenchen City OlympiaPark
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Aparthotel%20Adagio%20Access%20Muenchen%20City%20OlympiaPark" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1111,23 +1145,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Aparthotel Adagio Access Muenchen City OlympiaPark</span>
+                <span class="detail-value">Aparthotel Adagio Access Muenchen City OlympiaPark
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Aparthotel%20Adagio%20Access%20Muenchen%20City%20OlympiaPark" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1179,7 +1214,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Landal Arber, Zwiesel (94227)</span>
+                <span class="detail-value">Landal Arber, Zwiesel (94227)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Landal%20Arber%2C%20Zwiesel%20(94227)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1212,23 +1248,20 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Landal Arber, Zwiesel (94227)</span>
+                <span class="detail-value">Landal Arber, Zwiesel (94227)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Landal%20Arber%2C%20Zwiesel%20(94227)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1241,7 +1274,7 @@
                 <li>Passau
                   <ul>
                     <li>Café Greindl (p470)</li>
-                    <li>Café Stephan's Dom (p470)</li>
+                    <li>Café Stephan’s Dom (p470)</li>
                   </ul></li>
                 <li>Zwiesel
                   <ul>
@@ -1270,23 +1303,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Landal Arber, Zwiesel (94227)</span>
+                <span class="detail-value">Landal Arber, Zwiesel (94227)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Landal%20Arber%2C%20Zwiesel%20(94227)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1299,7 +1333,7 @@
                 <li>Passau
                   <ul>
                     <li>Café Greindl (p470)</li>
-                    <li>Café Stephan's Dom (p470)</li>
+                    <li>Café Stephan’s Dom (p470)</li>
                   </ul></li>
                 <li>Zwiesel
                   <ul>
@@ -1328,23 +1362,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Landal Arber, Zwiesel (94227)</span>
+                <span class="detail-value">Landal Arber, Zwiesel (94227)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Landal%20Arber%2C%20Zwiesel%20(94227)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1357,7 +1392,7 @@
                 <li>Passau
                   <ul>
                     <li>Café Greindl (p470)</li>
-                    <li>Café Stephan's Dom (p470)</li>
+                    <li>Café Stephan’s Dom (p470)</li>
                   </ul></li>
                 <li>Zwiesel
                   <ul>
@@ -1402,7 +1437,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Novotel Suites Berlin City Potsdamer Platz (10963)</span>
+                <span class="detail-value">Novotel Suites Berlin City Potsdamer Platz (10963)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Berlin%20City%20Potsdamer%20Platz%20(10963)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1436,23 +1472,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Novotel Suites Berlin City Potsdamer Platz (10963)</span>
+                <span class="detail-value">Novotel Suites Berlin City Potsdamer Platz (10963)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Berlin%20City%20Potsdamer%20Platz%20(10963)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1510,23 +1547,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Novotel Suites Berlin City Potsdamer Platz (10963)</span>
+                <span class="detail-value">Novotel Suites Berlin City Potsdamer Platz (10963)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Berlin%20City%20Potsdamer%20Platz%20(10963)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1600,7 +1638,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)</span>
+                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Roompot%20Recreatiepark%20De%20Tolpas%2C%20Hexelseweg%20(7645%20AM)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1632,23 +1671,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)</span>
+                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Roompot%20Recreatiepark%20De%20Tolpas%2C%20Hexelseweg%20(7645%20AM)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1683,23 +1723,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)</span>
+                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Roompot%20Recreatiepark%20De%20Tolpas%2C%20Hexelseweg%20(7645%20AM)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1734,23 +1775,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)</span>
+                <span class="detail-value">Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=Roompot%20Recreatiepark%20De%20Tolpas%2C%20Hexelseweg%20(7645%20AM)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1801,7 +1843,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">EuroParcs Het Amsterdamse Bos (1187 NZ Amstelveen)</span>
+                <span class="detail-value">EuroParcs Het Amsterdamse Bos (1187 NZ Amstelveen)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=EuroParcs%20Het%20Amsterdamse%20Bos%20(1187%20NZ%20Amstelveen)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1841,23 +1884,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">EuroParcs Het Amsterdamse Bos (1187 NZ Amstelveen)</span>
+                <span class="detail-value">EuroParcs Het Amsterdamse Bos (1187 NZ Amstelveen)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=EuroParcs%20Het%20Amsterdamse%20Bos%20(1187%20NZ%20Amstelveen)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1882,23 +1926,24 @@
             <div class="day-details">
               <div class="detail-row">
                 <span class="detail-label">Depart From</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Destination</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check Out Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Check In Time</span>
-                <span class="detail-value">Don't worry, relax!</span>
+                <span class="detail-value">Don’t worry, relax!</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">EuroParcs Het Amsterdamse Bos (1187 NZ Amstelveen)</span>
+                <span class="detail-value">EuroParcs Het Amsterdamse Bos (1187 NZ Amstelveen)
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=EuroParcs%20Het%20Amsterdamse%20Bos%20(1187%20NZ%20Amstelveen)" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
@@ -1939,7 +1984,8 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Overnight Location</span>
-                <span class="detail-value">DFDS Amsterdam to Newcastle Ferry</span>
+                <span class="detail-value">DFDS Amsterdam to Newcastle Ferry
+                  <a class="maps-button" href="https://www.google.com/maps/search/?api=1&query=DFDS%20Amsterdam%20to%20Newcastle%20Ferry" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Room Description</span>
