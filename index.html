@@ -551,6 +551,194 @@
       box-shadow: 0 14px 28px rgba(15, 61, 102, 0.22);
       outline: none;
     }
+
+    .suggestion-categories {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .suggestion-category {
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 24px rgba(15, 61, 102, 0.08);
+    }
+
+    .suggestion-category h5 {
+      margin: 0 0 0.75rem;
+      color: var(--blue-900);
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .suggestion-category ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    .suggestion-category li {
+      margin: 0.45rem 0;
+      line-height: 1.55;
+    }
+
+    .suggestion-category.eat {
+      background: #fff7ed;
+      border-color: #fed7aa;
+    }
+
+    .suggestion-category.drinks {
+      background: #fefce8;
+      border-color: #fde68a;
+    }
+
+    .suggestion-category.attractions {
+      background: #eef6ff;
+      border-color: #bfdbfe;
+    }
+
+    .suggestion-category.walks {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    .suggestion-category.shopping {
+      background: #faf5ff;
+      border-color: #e9d5ff;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .overview-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 10rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      justify-content: space-between;
+    }
+
+    .overview-card::after {
+      content: "";
+      position: absolute;
+      width: 8rem;
+      height: 8rem;
+      right: -3rem;
+      top: -3rem;
+      border-radius: 999px;
+      background: rgba(47, 155, 230, 0.1);
+      pointer-events: none;
+    }
+
+    .overview-wide {
+      grid-column: span 3;
+    }
+
+    .overview-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 2.7rem;
+      height: 2.7rem;
+      border-radius: 17px;
+      background: var(--blue-100);
+      font-size: 1.45rem;
+    }
+
+    .overview-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .overview-value {
+      color: var(--blue-900);
+      font-size: clamp(2.4rem, 8vw, 4.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .overview-tags,
+    .overview-stops {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .overview-tags span,
+    .overview-stops span {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.55rem 0.75rem;
+      background: var(--blue-100);
+      color: var(--blue-900);
+      font-weight: 750;
+      line-height: 1.35;
+    }
+
+    .overview-stops span {
+      border-radius: 14px;
+      background: #fbfdff;
+      border: 1px solid var(--border);
+    }
+
+    .overview-travel .overview-icon {
+      background: var(--blue-100);
+    }
+
+    .overview-relax .overview-icon {
+      background: var(--green-100);
+    }
+
+    @media (max-width: 820px) {
+      .overview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .overview-wide {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-wide {
+        grid-column: span 1;
+      }
+    }
+
+    .destination-photo {
+      margin-bottom: 1.1rem;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 32px rgba(15, 61, 102, 0.12);
+      background: var(--blue-100);
+    }
+
+    .destination-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .destination-photo figcaption {
+      padding: 0.7rem 0.9rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 750;
+      background: rgba(255, 255, 255, 0.92);
+    }
   </style>
 </head>
 <body>
@@ -562,6 +750,7 @@
       </a>
       <div class="nav-links">
         <a class="nav-link" href="#welcome">Welcome</a>
+        <a class="nav-link" href="#trip-overview">Overview</a>
         <a class="nav-link" href="#countdown">Countdown</a>
         <a class="nav-link" href="#summary">Summary</a>
         <a class="nav-link" href="#itinerary">Itinerary</a>
@@ -574,6 +763,55 @@
       <div class="hero-card">
         <p class="eyebrow">Family Holiday</p>
         <h1 id="holiday-title">Holiday Title</h1>
+      </div>
+    </section>
+
+    <section id="trip-overview" class="section" aria-labelledby="trip-overview-title">
+      <h2 id="trip-overview-title" class="section-heading"><span class="heading-icon" aria-hidden="true">🌍</span><span>Trip Overview</span></h2>
+      <div class="overview-grid">
+        <article class="card overview-card overview-days">
+          <span class="overview-icon" aria-hidden="true">📅</span>
+          <span class="overview-label">Total Days</span>
+          <strong class="overview-value">25</strong>
+        </article>
+        <article class="card overview-card overview-travel">
+          <span class="overview-icon" aria-hidden="true">🚗</span>
+          <span class="overview-label">Travel Days</span>
+          <strong class="overview-value">11</strong>
+        </article>
+        <article class="card overview-card overview-relax">
+          <span class="overview-icon" aria-hidden="true">🌴</span>
+          <span class="overview-label">Relax Days</span>
+          <strong class="overview-value">14</strong>
+        </article>
+        <article class="card overview-card overview-wide">
+          <span class="overview-icon" aria-hidden="true">🌍</span>
+          <span class="overview-label">Countries Visited</span>
+          <div class="overview-tags">
+            <span>England</span>
+            <span>France</span>
+            <span>Belgium</span>
+            <span>Germany</span>
+            <span>Netherlands</span>
+          </div>
+        </article>
+        <article class="card overview-card overview-wide">
+          <span class="overview-icon" aria-hidden="true">🏨</span>
+          <span class="overview-label">Main Overnight Stops</span>
+          <div class="overview-stops">
+            <span>Holiday Inn Express London – Dartford (DA1 5PA)</span>
+            <span>Ibis Budget Bruges Centrum Station (8000)</span>
+            <span>Citadines Sainte-Catherine Brussels (1000 Brussels)</span>
+            <span>Landal Mont Royal, Krov (54536)</span>
+            <span>2nd Home Hotel, Nordlingen (86720)</span>
+            <span>Aparthotel Adagio Access Muenchen City OlympiaPark</span>
+            <span>Landal Arber, Zwiesel (94227)</span>
+            <span>Novotel Suites Berlin City Potsdamer Platz (10963)</span>
+            <span>Roompot Recreatiepark De Tolpas, Hexelseweg (7645 AM)</span>
+            <span>EuroParcs Het Amsterdamse Bos (1187 NZ Amstelveen)</span>
+            <span>DFDS Amsterdam to Newcastle Ferry</span>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -670,9 +908,14 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Eat at the Tawny Owl (NG24 3NG)</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category eat">
+                <h5>🍽 Places to Eat</h5>
+                <ul>
+                  <li>Eat at the Tawny Owl (NG24 3NG)</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -718,19 +961,37 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Bruges
-                  <ul>
-                    <li>Canal Boat Tour</li>
-                    <li>Church of Our Lady – Michaelangelo Madonna &amp; Child</li>
-                    <li>EAT: Tom’s Diner (p. 100)</li>
-                    <li>EAT: Chocolaterie Spegelagre (p. 99)</li>
-                    <li>DRINKS: T’Poatersgat</li>
-                    <li>DRINKS: Café Vlinssinghe</li>
-                  </ul></li>
-                <li>Dunkirk</li>
-                <li>Ypres</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category eat">
+                <h5>🍽 Places to Eat</h5>
+                <ul>
+                  <li>Bruges: EAT: Tom’s Diner (p. 100)</li>
+                  <li>Bruges: EAT: Chocolaterie Spegelagre (p. 99)</li>
+                </ul>
+              </div>
+              <div class="suggestion-category drinks">
+                <h5>🍺 Drinks</h5>
+                <ul>
+                  <li>Bruges: DRINKS: T’Poatersgat</li>
+                  <li>Bruges: DRINKS: Café Vlinssinghe</li>
+                </ul>
+              </div>
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Bruges</li>
+                  <li>Bruges: Church of Our Lady – Michaelangelo Madonna & Child</li>
+                  <li>Dunkirk</li>
+                  <li>Ypres</li>
+                </ul>
+              </div>
+              <div class="suggestion-category walks">
+                <h5>🚶 Walks</h5>
+                <ul>
+                  <li>Bruges: Canal Boat Tour</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -776,26 +1037,42 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Bruges
-                  <ul>
-                    <li>Canal Boat Tour</li>
-                    <li>Church of Our Lady – Michaelangelo Madonna &amp; Child</li>
-                    <li>EAT: Tom’s Diner (p. 100)</li>
-                    <li>EAT: Chocolaterie Spegelagre (p. 99)</li>
-                    <li>DRINKS: T’Poatersgat</li>
-                    <li>DRINKS: Café Vlinssinghe</li>
-                  </ul></li>
-                <li>Ghent</li>
-                <li>Brussels:
-                  <ul>
-                    <li>Grand Place</li>
-                    <li>EU Quarter</li>
-                    <li>(EAT) Menma (p. 50 - Ramen)</li>
-                    <li>(EAT) Les Planches (p. 56 - General)</li>
-                    <li>(EAT) Maison Antoines (p.56 - Frittes)</li>
-                  </ul></li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category eat">
+                <h5>🍽 Places to Eat</h5>
+                <ul>
+                  <li>Bruges: EAT: Tom’s Diner (p. 100)</li>
+                  <li>Bruges: EAT: Chocolaterie Spegelagre (p. 99)</li>
+                  <li>Brussels:: (EAT) Menma (p. 50 - Ramen)</li>
+                  <li>Brussels:: (EAT) Les Planches (p. 56 - General)</li>
+                  <li>Brussels:: (EAT) Maison Antoines (p.56 - Frittes)</li>
+                </ul>
+              </div>
+              <div class="suggestion-category drinks">
+                <h5>🍺 Drinks</h5>
+                <ul>
+                  <li>Bruges: DRINKS: T’Poatersgat</li>
+                  <li>Bruges: DRINKS: Café Vlinssinghe</li>
+                </ul>
+              </div>
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Bruges</li>
+                  <li>Bruges: Church of Our Lady – Michaelangelo Madonna & Child</li>
+                  <li>Ghent</li>
+                  <li>Brussels:</li>
+                  <li>Brussels:: Grand Place</li>
+                  <li>Brussels:: EU Quarter</li>
+                </ul>
+              </div>
+              <div class="suggestion-category walks">
+                <h5>🚶 Walks</h5>
+                <ul>
+                  <li>Bruges: Canal Boat Tour</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -841,24 +1118,30 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Brussels:
-                  <ul>
-                    <li>Grand Place</li>
-                    <li>EU Quarter</li>
-                    <li>(EAT) Menma (p. 50 - Ramen)</li>
-                    <li>(EAT) Les Planches (p. 56 - General)</li>
-                    <li>(EAT) Maison Antoines (p.56 - Frittes)</li>
-                  </ul></li>
-                <li>Waterloo</li>
-                <li>Trier
-                  <ul>
-                    <li>Porta Nigra</li>
-                    <li>Amphitheatre</li>
-                    <li>Trier Dom</li>
-                    <li>Karl Marx Haus</li>
-                  </ul></li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category eat">
+                <h5>🍽 Places to Eat</h5>
+                <ul>
+                  <li>Brussels:: (EAT) Menma (p. 50 - Ramen)</li>
+                  <li>Brussels:: (EAT) Les Planches (p. 56 - General)</li>
+                  <li>Brussels:: (EAT) Maison Antoines (p.56 - Frittes)</li>
+                </ul>
+              </div>
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Brussels:</li>
+                  <li>Brussels:: Grand Place</li>
+                  <li>Brussels:: EU Quarter</li>
+                  <li>Waterloo</li>
+                  <li>Trier</li>
+                  <li>Trier: Porta Nigra</li>
+                  <li>Trier: Amphitheatre</li>
+                  <li>Trier: Trier Dom</li>
+                  <li>Trier: Karl Marx Haus</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -904,15 +1187,20 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Trier</li>
-                <li>Bernkastel-Kues</li>
-                <li>Cochem (Boat Ride?)</li>
-                <li>Koblenz</li>
-                <li>Boppard</li>
-                <li>Eltz</li>
-                <li>Morsdorf</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Trier</li>
+                  <li>Bernkastel-Kues</li>
+                  <li>Cochem (Boat Ride?)</li>
+                  <li>Koblenz</li>
+                  <li>Boppard</li>
+                  <li>Eltz</li>
+                  <li>Morsdorf</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -958,15 +1246,20 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Trier</li>
-                <li>Bernkastel-Kues</li>
-                <li>Cochem (Boat Ride?)</li>
-                <li>Koblenz</li>
-                <li>Boppard</li>
-                <li>Eltz</li>
-                <li>Morsdorf</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Trier</li>
+                  <li>Bernkastel-Kues</li>
+                  <li>Cochem (Boat Ride?)</li>
+                  <li>Koblenz</li>
+                  <li>Boppard</li>
+                  <li>Eltz</li>
+                  <li>Morsdorf</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1012,15 +1305,20 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Trier</li>
-                <li>Bernkastel-Kues</li>
-                <li>Cochem (Boat Ride?)</li>
-                <li>Koblenz</li>
-                <li>Boppard</li>
-                <li>Eltz</li>
-                <li>Morsdorf</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Trier</li>
+                  <li>Bernkastel-Kues</li>
+                  <li>Cochem (Boat Ride?)</li>
+                  <li>Koblenz</li>
+                  <li>Boppard</li>
+                  <li>Eltz</li>
+                  <li>Morsdorf</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1066,11 +1364,16 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Tauberbischofsheim</li>
-                <li>Rothenburg Ob Der Trauber</li>
-                <li>Dinkelsbuhl</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Tauberbischofsheim</li>
+                  <li>Rothenburg Ob Der Trauber</li>
+                  <li>Dinkelsbuhl</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1116,16 +1419,24 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Fussen</li>
-                <li>Schloss Neuschwanstein</li>
-                <li>Munich
-                  <ul>
-                    <li>Tiergarten</li>
-                    <li>DRINK: Chinesischer Turm</li>
-                    <li>DRINK: Hofbrauhaus</li>
-                  </ul></li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category drinks">
+                <h5>🍺 Drinks</h5>
+                <ul>
+                  <li>Munich: DRINK: Chinesischer Turm</li>
+                  <li>Munich: DRINK: Hofbrauhaus</li>
+                </ul>
+              </div>
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Fussen</li>
+                  <li>Schloss Neuschwanstein</li>
+                  <li>Munich</li>
+                  <li>Munich: Tiergarten</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1171,14 +1482,29 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Marienplatz</li>
-                <li>Tiergarten</li>
-                <li>DRINK: Chinesischer Turm</li>
-                <li>Bayern Munich Museum</li>
-                <li>Nazi Walking Tours</li>
-                <li>DRINK: Hofbrauhaus</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category drinks">
+                <h5>🍺 Drinks</h5>
+                <ul>
+                  <li>DRINK: Chinesischer Turm</li>
+                  <li>DRINK: Hofbrauhaus</li>
+                </ul>
+              </div>
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Marienplatz</li>
+                  <li>Tiergarten</li>
+                  <li>Bayern Munich Museum</li>
+                </ul>
+              </div>
+              <div class="suggestion-category walks">
+                <h5>🚶 Walks</h5>
+                <ul>
+                  <li>Nazi Walking Tours</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1224,11 +1550,16 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Dachau</li>
-                <li>Passau</li>
-                <li>Regensburg</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Dachau</li>
+                  <li>Passau</li>
+                  <li>Regensburg</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1270,20 +1601,21 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Passau
-                  <ul>
-                    <li>Café Greindl (p470)</li>
-                    <li>Café Stephan’s Dom (p470)</li>
-                  </ul></li>
-                <li>Zwiesel
-                  <ul>
-                    <li>Dampfbrau</li>
-                    <li>Glaserne Scheune</li>
-                  </ul></li>
-                <li>Mount Grosser Arber</li>
-                <li>Mount Luse</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Passau</li>
+                  <li>Passau: Café Greindl (p470)</li>
+                  <li>Passau: Café Stephan’s Dom (p470)</li>
+                  <li>Zwiesel</li>
+                  <li>Zwiesel: Dampfbrau</li>
+                  <li>Zwiesel: Glaserne Scheune</li>
+                  <li>Mount Grosser Arber</li>
+                  <li>Mount Luse</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1329,20 +1661,21 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Passau
-                  <ul>
-                    <li>Café Greindl (p470)</li>
-                    <li>Café Stephan’s Dom (p470)</li>
-                  </ul></li>
-                <li>Zwiesel
-                  <ul>
-                    <li>Dampfbrau</li>
-                    <li>Glaserne Scheune</li>
-                  </ul></li>
-                <li>Mount Grosser Arber</li>
-                <li>Mount Luse</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Passau</li>
+                  <li>Passau: Café Greindl (p470)</li>
+                  <li>Passau: Café Stephan’s Dom (p470)</li>
+                  <li>Zwiesel</li>
+                  <li>Zwiesel: Dampfbrau</li>
+                  <li>Zwiesel: Glaserne Scheune</li>
+                  <li>Mount Grosser Arber</li>
+                  <li>Mount Luse</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1388,20 +1721,21 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Passau
-                  <ul>
-                    <li>Café Greindl (p470)</li>
-                    <li>Café Stephan’s Dom (p470)</li>
-                  </ul></li>
-                <li>Zwiesel
-                  <ul>
-                    <li>Dampfbrau</li>
-                    <li>Glaserne Scheune</li>
-                  </ul></li>
-                <li>Mount Grosser Arber</li>
-                <li>Mount Luse</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Passau</li>
+                  <li>Passau: Café Greindl (p470)</li>
+                  <li>Passau: Café Stephan’s Dom (p470)</li>
+                  <li>Zwiesel</li>
+                  <li>Zwiesel: Dampfbrau</li>
+                  <li>Zwiesel: Glaserne Scheune</li>
+                  <li>Mount Grosser Arber</li>
+                  <li>Mount Luse</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1447,12 +1781,17 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Wittenberg</li>
-                <li>Spreewald</li>
-                <li>Dresden</li>
-                <li>Liepzig</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Wittenberg</li>
+                  <li>Spreewald</li>
+                  <li>Dresden</li>
+                  <li>Liepzig</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1498,36 +1837,55 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Brandenburg Gate</li>
-                <li>Checkpoint Charlie</li>
-                <li>Potsdamer Platz
-                  <ul>
-                    <li>(EAT) The Sanctuary</li>
-                  </ul></li>
-                <li>Tiergarten
-                  <ul>
-                    <li>(EAT) Café Am Neaun See</li>
-                    <li>(SHOP) Berliner Trodelmarkt</li>
-                  </ul></li>
-                <li>East Berlin
-                  <ul>
-                    <li>Stasi Museum</li>
-                    <li>Karl Marx Allee</li>
-                  </ul></li>
-                <li>(SHOP) Ka De We</li>
-                <li>(EAT) Chay Long (Vegan Vietnamese - p. 90)</li>
-                <li>(EAT) Umami (Veg Options IndoChinese – p.90)</li>
-                <li>(DRINKS) Prater</li>
-                <li>Berliner Unterwelten (p.92)</li>
-                <li>Spy Museum (p. 98)</li>
-                <li>Topographie des Terrors (p.98)</li>
-                <li>(EAT) Saravanaa Bhavan (Meat Free Indian p. 98)</li>
-                <li>(EAT) Fraulein Kimchee (Korean Pink Tofu p.101)</li>
-                <li>(EAT) El Amigo Taquiera (Taco p.101)</li>
-                <li>(EAT) Narnj (Syrian Falafel p.101)</li>
-                <li>LuquidRom (p101)</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category eat">
+                <h5>🍽 Places to Eat</h5>
+                <ul>
+                  <li>Potsdamer Platz: (EAT) The Sanctuary</li>
+                  <li>Tiergarten: (EAT) Café Am Neaun See</li>
+                  <li>(EAT) Chay Long (Vegan Vietnamese - p. 90)</li>
+                  <li>(EAT) Umami (Veg Options IndoChinese – p.90)</li>
+                  <li>(EAT) Saravanaa Bhavan (Meat Free Indian p. 98)</li>
+                  <li>(EAT) Fraulein Kimchee (Korean Pink Tofu p.101)</li>
+                  <li>(EAT) El Amigo Taquiera (Taco p.101)</li>
+                  <li>(EAT) Narnj (Syrian Falafel p.101)</li>
+                </ul>
+              </div>
+              <div class="suggestion-category drinks">
+                <h5>🍺 Drinks</h5>
+                <ul>
+                  <li>(DRINKS) Prater</li>
+                </ul>
+              </div>
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Brandenburg Gate</li>
+                  <li>Checkpoint Charlie</li>
+                  <li>Potsdamer Platz</li>
+                  <li>Tiergarten</li>
+                  <li>East Berlin</li>
+                  <li>East Berlin: Stasi Museum</li>
+                  <li>East Berlin: Karl Marx Allee</li>
+                  <li>Spy Museum (p. 98)</li>
+                  <li>Topographie des Terrors (p.98)</li>
+                  <li>LuquidRom (p101)</li>
+                </ul>
+              </div>
+              <div class="suggestion-category walks">
+                <h5>🚶 Walks</h5>
+                <ul>
+                  <li>Berliner Unterwelten (p.92)</li>
+                </ul>
+              </div>
+              <div class="suggestion-category shopping">
+                <h5>🛍 Shopping</h5>
+                <ul>
+                  <li>Tiergarten: (SHOP) Berliner Trodelmarkt</li>
+                  <li>(SHOP) Ka De We</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1573,36 +1931,55 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Brandenburg Gate</li>
-                <li>Checkpoint Charlie</li>
-                <li>Potsdamer Platz
-                  <ul>
-                    <li>(EAT) The Sanctuary</li>
-                  </ul></li>
-                <li>Tiergarten
-                  <ul>
-                    <li>(EAT) Café Am Neaun See</li>
-                    <li>(SHOP) Berliner Trodelmarkt</li>
-                  </ul></li>
-                <li>East Berlin
-                  <ul>
-                    <li>Stasi Museum</li>
-                    <li>Karl Marx Allee</li>
-                  </ul></li>
-                <li>(SHOP) Ka De We</li>
-                <li>(EAT) Chay Long (Vegan Vietnamese - p. 90)</li>
-                <li>(EAT) Umami (Veg Options IndoChinese – p.90)</li>
-                <li>(DRINKS) Prater</li>
-                <li>Berliner Unterwelten (p.92)</li>
-                <li>Spy Museum (p. 98)</li>
-                <li>Topographie des Terrors (p.98)</li>
-                <li>(EAT) Saravanaa Bhavan (Meat Free Indian p. 98)</li>
-                <li>(EAT) Fraulein Kimchee (Korean Pink Tofu p.101)</li>
-                <li>(EAT) El Amigo Taquiera (Taco p.101)</li>
-                <li>(EAT) Narnj (Syrian Falafel p.101)</li>
-                <li>LuquidRom (p101)</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category eat">
+                <h5>🍽 Places to Eat</h5>
+                <ul>
+                  <li>Potsdamer Platz: (EAT) The Sanctuary</li>
+                  <li>Tiergarten: (EAT) Café Am Neaun See</li>
+                  <li>(EAT) Chay Long (Vegan Vietnamese - p. 90)</li>
+                  <li>(EAT) Umami (Veg Options IndoChinese – p.90)</li>
+                  <li>(EAT) Saravanaa Bhavan (Meat Free Indian p. 98)</li>
+                  <li>(EAT) Fraulein Kimchee (Korean Pink Tofu p.101)</li>
+                  <li>(EAT) El Amigo Taquiera (Taco p.101)</li>
+                  <li>(EAT) Narnj (Syrian Falafel p.101)</li>
+                </ul>
+              </div>
+              <div class="suggestion-category drinks">
+                <h5>🍺 Drinks</h5>
+                <ul>
+                  <li>(DRINKS) Prater</li>
+                </ul>
+              </div>
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Brandenburg Gate</li>
+                  <li>Checkpoint Charlie</li>
+                  <li>Potsdamer Platz</li>
+                  <li>Tiergarten</li>
+                  <li>East Berlin</li>
+                  <li>East Berlin: Stasi Museum</li>
+                  <li>East Berlin: Karl Marx Allee</li>
+                  <li>Spy Museum (p. 98)</li>
+                  <li>Topographie des Terrors (p.98)</li>
+                  <li>LuquidRom (p101)</li>
+                </ul>
+              </div>
+              <div class="suggestion-category walks">
+                <h5>🚶 Walks</h5>
+                <ul>
+                  <li>Berliner Unterwelten (p.92)</li>
+                </ul>
+              </div>
+              <div class="suggestion-category shopping">
+                <h5>🛍 Shopping</h5>
+                <ul>
+                  <li>Tiergarten: (SHOP) Berliner Trodelmarkt</li>
+                  <li>(SHOP) Ka De We</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1648,10 +2025,15 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Braunschweig</li>
-                <li>Osnabruck</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Braunschweig</li>
+                  <li>Osnabruck</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1697,13 +2079,18 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Zwolle</li>
-                <li>Deventer</li>
-                <li>Twente</li>
-                <li>Giethorn</li>
-                <li>Hugging Cows</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Zwolle</li>
+                  <li>Deventer</li>
+                  <li>Twente</li>
+                  <li>Giethorn</li>
+                  <li>Hugging Cows</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1749,13 +2136,18 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Zwolle</li>
-                <li>Deventer</li>
-                <li>Twente</li>
-                <li>Giethorn</li>
-                <li>Hugging Cows</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Zwolle</li>
+                  <li>Deventer</li>
+                  <li>Twente</li>
+                  <li>Giethorn</li>
+                  <li>Hugging Cows</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1801,13 +2193,18 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Zwolle</li>
-                <li>Deventer</li>
-                <li>Twente</li>
-                <li>Giethorn</li>
-                <li>Hugging Cows</li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Zwolle</li>
+                  <li>Deventer</li>
+                  <li>Twente</li>
+                  <li>Giethorn</li>
+                  <li>Hugging Cows</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
@@ -1853,18 +2250,24 @@
             </div>
             <section class="suggestions" aria-label="Dad's Suggestions">
               <h4>Dad's Suggestions</h4>
-              <ul class="suggestion-list">
-                <li>Utrecht
-                  <ul>
-                    <li>(EAT) Olivier (p.144)</li>
-                    <li>Dom Under</li>
-                    <li>(EAT) Koetshuis de Haar (p.147)</li>
-                  </ul></li>
-                <li>Arnhem
-                  <ul>
-                    <li>Bridge too far</li>
-                  </ul></li>
-              </ul>
+              <div class="suggestion-categories">
+              <div class="suggestion-category eat">
+                <h5>🍽 Places to Eat</h5>
+                <ul>
+                  <li>Utrecht: (EAT) Olivier (p.144)</li>
+                  <li>Utrecht: (EAT) Koetshuis de Haar (p.147)</li>
+                </ul>
+              </div>
+              <div class="suggestion-category attractions">
+                <h5>🏛 Attractions</h5>
+                <ul>
+                  <li>Utrecht</li>
+                  <li>Utrecht: Dom Under</li>
+                  <li>Arnhem</li>
+                  <li>Arnhem: Bridge too far</li>
+                </ul>
+              </div>
+              </div>
             </section>
           </div>
         </article>
